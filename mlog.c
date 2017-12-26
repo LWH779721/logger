@@ -16,7 +16,7 @@ char *mlog_time(void)
     return szTime;  
 }  
 
-long mlog_set_ofile(char *file)
+long mlog_set_logfile(char *file)
 {
     FILE *fp;
     

@@ -17,8 +17,6 @@ OBJS = $(patsubst %c, %o, $(SRCS))
 CCFLAGS = -g -Wall -O2
 
 ALL:$(output_lib) $(output_debug) $(output_release)
-	@echo $(SRCS) 
-	@echo $(OBJS)
         
 $(output_debug):$(output_lib)
 	$(cc) $(test_source) $(cflag_debug) $(lib_flags) -o $(output_debug)
@@ -28,9 +26,6 @@ $(output_release):$(output_lib)
     
 $(output_lib):$(OBJS)
 	$(cc) $(OBJS) $(LDFLAGS) -o $(output_lib)
-#	-mkdir /usr/local/include/$(output)
-#	-cp *.h /usr/local/include/$(output)/
-#	-mv $(output_lib) /usr/local/lib/ 
 
 libmlog.a:$(OBJS)
     ar cr libmlog.a mlog.o

@@ -48,7 +48,7 @@ do {\
 #endif
 #endif
 
-extern long mlog_set_ofile(char *file);
+extern long mlog_set_logfile(char *file);
 
 #ifdef __Cplusplus
 }
