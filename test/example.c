@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <mlog.h>
+#include <logger.h>
 
 int main(int argc, char **args)
 {

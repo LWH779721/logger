@@ -5,7 +5,7 @@
 extern "C"{
 #endif
 
-#define DEBUG_LEVEL 1
+#define DEBUG_LEVEL 3
 
 #ifdef DEBUG_LEVEL
 
