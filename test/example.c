@@ -3,11 +3,12 @@
 
 int main(int argc, char **args)
 {
-    int i;
-    
-    mlog_err("test err");
-    mlog_warm("test warm");
-    mlog_info("test info");
-    
+    int ret;
+
+	logger(info, "test info");
+	logger(debug, "test debug");
+	logger(warm, "test warm");
+	logger(err, "test err");
+	
     return 0;        
 }

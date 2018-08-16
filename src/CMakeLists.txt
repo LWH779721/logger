@@ -2,7 +2,9 @@
 
 #PROJECT(logger)  
 
+ADD_SUBDIRECTORY(output)
 AUX_SOURCE_DIRECTORY(. DIR_SRCS)
+
 INCLUDE_DIRECTORIES(/usr/include/glib) 
 INCLUDE_DIRECTORIES(../include) 
 
