@@ -5,4 +5,3 @@ INCLUDE_DIRECTORIES(../include)
 
 ADD_EXECUTABLE(example ${DIR_SRCS})  
 TARGET_LINK_LIBRARIES( example logger )
-TARGET_LINK_LIBRARIES( example output )

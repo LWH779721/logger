@@ -5,13 +5,18 @@
 extern "C"{
 #endif
 
-#define INFO  0
-#define DEBUG 1
-#define WARM  2
-#define ERR   3
-#define ALL   4
+/*
+*  tip: none and all is not for custom use, It's for logger use to close or open all print 
+*/
+#define NONE  0   
+#define INFO  1
+#define DEBUG 2
+#define WARM  3
+#define ERR   4
+#define ALL   5
 
 enum log_level {
+	none,   
 	info,
 	debug,
 	warm,

@@ -2,7 +2,6 @@
 #include <time.h>
 #include <sys/timeb.h>
 
-/* -------------- private header-------------------------*/
 #include "logger.h"
 
 char *mlog_time(void)  
