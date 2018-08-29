@@ -1,12 +1,12 @@
-#ifndef __MLOG_H__
-#define __MLOG_H__
+#ifndef __LOGGER_H__
+#define __LOGGER_H__
 
 #ifdef __cplusplus
 extern "C"{
 #endif
 
 #include "logger_compile_conf.h"
-#include "output/output_file.h"
+//#include "output/output_file.h"
 
 #define logger(LEVEL, sparam, arg...)\
 do{\
@@ -41,7 +41,7 @@ do{\
 		#define mlog_debug(sparam,arg...)	
 	#endif
 	
-	#if LOGGER_COMPILE_LEVEL >= info
+	#if LOGGER_COMPILE_LEVEL >= INFO
 		#define mlog_info(sparam,arg...) \
 			do {\
 				printf("[%s %s:%d %s] info:"sparam"\n", mlog_time(), __FILE__, __LINE__, __FUNCTION__, ##arg);\
@@ -51,6 +51,7 @@ do{\
 	#endif
 #endif
 
+extern char *mlog_time(void);
 extern long mlog_set_logfile(char *file);
 
 #ifdef __cplusplus

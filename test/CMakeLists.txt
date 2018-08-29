@@ -1,7 +1,8 @@
 AUX_SOURCE_DIRECTORY(. DIR_SRCS)
 
-INCLUDE_DIRECTORIES(/usr/include/glib) 
+add_definitions("-Wall -g")
+#INCLUDE_DIRECTORIES(/usr/include/glib) 
 INCLUDE_DIRECTORIES(../include) 
 
 ADD_EXECUTABLE(example ${DIR_SRCS})  
-TARGET_LINK_LIBRARIES( example logger )
+TARGET_LINK_LIBRARIES(example logger)
