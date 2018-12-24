@@ -8,12 +8,12 @@ extern "C"{
 /*
 *  tip: none and all is not for custom use, It's for logger use to close or open all print 
 */
-#define NONE  0   
-#define INFO  1
-#define DEBUG 2
-#define WARM  3
-#define ERR   4
-#define ALL   5
+#define NONE  	0   
+#define INFO  	1
+#define DEBUG 	2
+#define WARM  	3
+#define ERROR   4
+#define ALL   	5
 
 enum log_level {
 	none,   

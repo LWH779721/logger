@@ -5,6 +5,7 @@
 extern "C"{
 #endif
 
+extern char *format_code_info_file_basename(const char *fname);
 
 #ifdef __cplusplus
 }

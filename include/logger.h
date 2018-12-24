@@ -5,54 +5,52 @@
 extern "C"{
 #endif
 
-#include "logger_compile_conf.h"
+#include "format/format_time.h"
+#include "format/format_code_info.h"
 //#include "output/output_file.h"
 
 #define logger(LEVEL, sparam, arg...)\
 do{\
-	mlog_##LEVEL(sparam, ##arg);\
+	logger_##LEVEL(sparam, ##arg);\
 } while(0);
 
 #ifdef LOGGER_COMPILE_LEVEL
 	#if LOGGER_COMPILE_LEVEL >= ERR
-		#define mlog_err(sparam,arg...) \
+		#define logger_err(sparam, arg...) \
 			do {\
-				printf("[%s %s:%d %s] err:"sparam"\n", mlog_time(), __FILE__, __LINE__, __FUNCTION__, ##arg);\
+				fprintf(stderr, "[E %s %s:%s.%d]"sparam"\n", format_time_timeStamp(), format_code_info_file_basename(__FILE__), __FUNCTION__, __LINE__, ##arg);\
 			}while(0);
 	#else
-		#define mlog_err(sparam,arg...)	
+		#define logger_err(sparam,arg...)	
 	#endif
 	
 	#if LOGGER_COMPILE_LEVEL >= WARM
-		#define mlog_warm(sparam,arg...) \
+		#define logger_warm(sparam,arg...) \
 			do {\
-				printf("[%s %s:%d %s] warm:"sparam"\n", mlog_time(), __FILE__, __LINE__, __FUNCTION__, ##arg);\
+				printf("[W %s %s:%s.%d] warm:"sparam"\n", format_time_timeStamp(), format_code_info_file_basename(__FILE__), __FUNCTION__, __LINE__, ##arg);\
 			}while(0);
 	#else
-		#define mlog_warm(sparam,arg...)	
+		#define logger_warm(sparam,arg...)	
 	#endif
 	
 	#if LOGGER_COMPILE_LEVEL >= DEBUG
-		#define mlog_debug(sparam,arg...) \
+		#define logger_debug(sparam,arg...) \
 			do {\
-				printf("[%s %s:%d %s] debug:"sparam"\n", mlog_time(), __FILE__, __LINE__, __FUNCTION__, ##arg);\
+				printf("[D %s %s:%s.%d] debug:"sparam"\n", format_time_timeStamp(), format_code_info_file_basename(__FILE__), __FUNCTION__, __LINE__, ##arg);\
 			}while(0);
 	#else
-		#define mlog_debug(sparam,arg...)	
+		#define logger_debug(sparam,arg...)	
 	#endif
 	
 	#if LOGGER_COMPILE_LEVEL >= INFO
-		#define mlog_info(sparam,arg...) \
+		#define logger_info(sparam,arg...) \
 			do {\
-				printf("[%s %s:%d %s] info:"sparam"\n", mlog_time(), __FILE__, __LINE__, __FUNCTION__, ##arg);\
+				printf("[I %s %s:%s.%d]"sparam"\n", format_time_timeStamp(), format_code_info_file_basename(__FILE__), __FUNCTION__, __LINE__, ##arg);\
 			}while(0);
 	#else
-		#define mlog_info(sparam,arg...)	
+		#define logger_info(sparam,arg...)	
 	#endif
 #endif
-
-extern char *mlog_time(void);
-extern long mlog_set_logfile(char *file);
 
 #ifdef __cplusplus
 }

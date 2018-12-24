@@ -1,6 +1,8 @@
 AUX_SOURCE_DIRECTORY(. DIR_SRCS)
 
 add_definitions("-Wall -g")
+ADD_DEFINITIONS(-DLOGGER_COMPILE_LEVEL=ERROR) 
+
 #INCLUDE_DIRECTORIES(/usr/include/glib) 
 INCLUDE_DIRECTORIES(../include) 
 
