@@ -1,5 +1,5 @@
-#ifndef __FORMAT_CODE_INFO_H__
-#define __FORMAT_CODE_INFO_H__
+#ifndef __LOGGER_LEVEL_H__
+#define __LOGGER_LEVEL_H__
 
 #ifdef __cplusplus
 extern "C"{
